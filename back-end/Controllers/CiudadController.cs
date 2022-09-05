@@ -72,7 +72,7 @@ namespace back_end.Controllers
         }
 
 
-        [HttpDelete]
+        [HttpDelete("{id:int}")]
         public async Task<ActionResult<CiudadDto>> Delete(int id)
         {
             var ciudad = await Context.Ciudad.AnyAsync(x => x.ID == id);
