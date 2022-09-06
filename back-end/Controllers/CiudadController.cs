@@ -80,7 +80,7 @@ namespace back_end.Controllers
             if (ciudad == null)
                 return NotFound();
 
-            Context.Remove(new Ciudad { ID = id});
+            Context.Remove(new Ciudad() { ID = id});
             await Context.SaveChangesAsync();
             return NotFound();
         }
