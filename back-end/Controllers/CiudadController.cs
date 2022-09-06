@@ -58,7 +58,7 @@ namespace back_end.Controllers
             return mapper.Map<CiudadDto>(ciudad);
         }
 
-        [HttpPut]
+        [HttpPut("{id:int}")]
         public async Task<ActionResult<CiudadDto>> Put(int id, CreacionCiudadDto creacionCiudadDto)
         {
             var ciudad = await Context.Ciudad.FirstOrDefaultAsync(x => x.ID == id);
@@ -68,7 +68,7 @@ namespace back_end.Controllers
 
             ciudad = mapper.Map(creacionCiudadDto, ciudad);
             await Context.SaveChangesAsync();
-            return NotFound();
+            return NoContent();
         }
 
 
@@ -82,7 +82,7 @@ namespace back_end.Controllers
 
             Context.Remove(new Ciudad() { ID = id});
             await Context.SaveChangesAsync();
-            return NotFound();
+            return NoContent();
         }
             
     }

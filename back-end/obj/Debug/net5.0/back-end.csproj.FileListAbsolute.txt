@@ -56,4 +56,3 @@ C:\Repositorios\PruebaElTiempo\back-end\obj\Debug\net5.0\back-end.genruntimeconf
 C:\Repositorios\PruebaElTiempo\back-end\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Repositorios\PruebaElTiempo\back-end\bin\Debug\net5.0\Microsoft.DotNet.PlatformAbstractions.dll
 C:\Repositorios\PruebaElTiempo\back-end\bin\Debug\net5.0\Microsoft.Extensions.DependencyModel.dll
-C:\Repositorios\PruebaElTiempo\back-end\obj\Debug\net5.0\back-end.csproj.AssemblyReference.cache
