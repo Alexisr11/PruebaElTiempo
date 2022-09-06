@@ -1,0 +1,8 @@
+<h2>Editar Diudad</h2>
+
+<app-formulario-ciudad *ngIf="modelo"
+[modelo]="modelo"
+(onSubmit)="guardarCambios($event)"
+></app-formulario-ciudad>
+
+<mat-spinner *ngIf="!modelo"></mat-spinner>
