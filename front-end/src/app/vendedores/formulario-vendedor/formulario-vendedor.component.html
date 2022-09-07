@@ -1,1 +1,43 @@
-<p>formulario-vendedor works!</p>
+<form class="container-formulario" (submit)="guardarCambiosCiudad()" [formGroup]="form">
+
+    <div>
+        <mat-form-field appearance="outline">
+            <mat-label>Nombre</mat-label>
+            <input formControlName="nombre" matInput />
+            <mat-error *ngIf="form.invalid">{{obtenerErrorCampoNombre()}}</mat-error>
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field appearance="outline">
+            <mat-label>Apellido</mat-label>
+            <input formControlName="apellido" matInput />
+            <mat-error *ngIf="form.invalid">{{obtenerErrorCampoApellido()}}</mat-error>
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field appearance="outline">
+            <mat-label>Documento</mat-label>
+            <input formControlName="documento" matInput />
+            <mat-error *ngIf="form.invalid">{{obtenerErrorCampoDocumento()}}</mat-error>
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field appearance="fill">
+            <mat-label>Ciudad</mat-label>
+            <mat-select formControlName="ciudad" >
+                <mat-option *ngFor="let item of ciudad" [value]="item.id">{{item.nombre}}</mat-option>
+            </mat-select>
+            <mat-error *ngIf="form.invalid">{{obtenerErrorCampoCiudad()}}</mat-error>
+        </mat-form-field>
+    </div>
+    
+
+    <div class="botones-formularios">
+        <button mat-flat-button color="primary" [disabled]="form.invalid">
+            Guardar Cambios
+        </button>
+        <a mat-stroked-button routerLink="/vendedores">
+            Cancelar
+        </a>
+    </div>
+</form>

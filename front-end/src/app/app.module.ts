@@ -4,7 +4,8 @@ import { MatirialModule} from './material/material.module';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule} from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule} from '@angular/forms';
-import { SweetAlert2Module} from '@sweetalert2/ngx-sweetalert2'
+import { SweetAlert2Module} from '@sweetalert2/ngx-sweetalert2';
+import {MatSelectModule} from '@angular/material/select';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -41,7 +42,8 @@ import { FormularioVendedorComponent } from './vendedores/formulario-vendedor/fo
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    SweetAlert2Module.forRoot()
+    SweetAlert2Module.forRoot(),
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

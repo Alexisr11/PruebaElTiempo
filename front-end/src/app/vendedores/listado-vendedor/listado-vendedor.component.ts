@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { CiudadService } from 'src/app/ciudades/ciudad.service';
+import { VendedorDto } from '../vendedor';
+import { VendedorService } from '../vendedor.service';
 
 @Component({
   selector: 'app-listado-vendedor',
@@ -7,9 +10,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListadoVendedorComponent implements OnInit {
 
-  constructor() { }
+  vendedorDto: VendedorDto[];
+  columnasAmostrar = ['id','nombre','apellido','documento','ciudad','acciones']
+
+  constructor(private venderoService: VendedorService) { }
 
   ngOnInit(): void {
+    this.obtenerTodos();  
   }
+
+  obtenerTodos(){
+    this.venderoService.obtenertodo()
+    .subscribe(vendedores => {
+      this.vendedorDto = vendedores
+      console.log(vendedores);
+    }, error => console.log(error))
+  }
+
+ 
+  /* borrarCiudad(id: number){
+    this.venderoService.eliminarCiudad(id).subscribe(() => {
+      this.obtenerTodos()
+     }, error => console.log(error) )
+  } */
 
 }

@@ -1,1 +1,44 @@
 <h2>Listado de Vendedores</h2>
+
+<button mat-flat-button color="primary" routerLink="/crearVendedores">Crear Vendedores</button>
+
+<ng-container contenido>
+    <table #table  mat-table [dataSource]="vendedorDto" class="mat-elevation-z8 tabla-listado" >
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef>Id</th>
+            <td mat-cell *matCellDef="let vendedor">{{vendedor.id}}</td>
+        </ng-container>
+        <ng-container matColumnDef="nombre">
+            <th mat-header-cell *matHeaderCellDef>Nombre</th>
+            <td mat-cell *matCellDef="let vendedor">{{vendedor.nombre}}</td>
+        </ng-container>
+        <ng-container matColumnDef="apellido">
+            <th mat-header-cell *matHeaderCellDef>Apellido</th>
+            <td mat-cell *matCellDef="let vendedor">{{vendedor.apellido}}</td>
+        </ng-container>
+        <ng-container matColumnDef="documento">
+            <th mat-header-cell *matHeaderCellDef>Documento</th>
+            <td mat-cell *matCellDef="let vendedor">{{vendedor.documento}}</td>
+        </ng-container>
+        <ng-container matColumnDef="ciudad">
+            <th mat-header-cell *matHeaderCellDef>Ciudad</th>
+            <td mat-cell *matCellDef="let vendedor">{{ vendedor.ciudad.nombre }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="acciones">
+            <th mat-header-cell *matHeaderCellDef>Acciones</th>
+            <td mat-cell *matCellDef="let vendedor">
+                <a routerLink="/editarvendedor/{{vendedor.id}}" mat-flat-button color="primary">Editar</a>    
+                
+                <button mat-flat-button color="warn" 
+                [swal]="{title: 'Confirmacion de Eliminacion',
+                text: '¿Esta seguro de Eliminar este Registro?',
+                showCancelButton: true}"      
+                (confirm)="borrarvendedor(vendedor.id)">Eliminar</button> 
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="columnasAmostrar"></tr>
+        <tr mat-row *matRowDef="let row; columns: columnasAmostrar"></tr>
+    </table>
+</ng-container>
