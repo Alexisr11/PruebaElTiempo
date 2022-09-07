@@ -44,8 +44,7 @@ namespace back_end.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_Vendedor_CiudadId",
                 table: "Vendedor",
-                column: "CiudadId",
-                unique: true);
+                column: "CiudadId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

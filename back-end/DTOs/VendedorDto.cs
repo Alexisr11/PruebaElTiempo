@@ -14,7 +14,6 @@ namespace back_end.DTOs
         public string nombre { get; set; }
         public string apellido { get; set; }
         public string documento { get; set; }
-        [ModelBinder(BinderType = typeof(TypeBinder<CiudadDto>))]
         public CiudadDto Ciudad { get; set; }
 
     }

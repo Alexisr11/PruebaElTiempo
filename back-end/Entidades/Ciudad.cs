@@ -9,7 +9,6 @@ namespace back_end.Entidades
     {
         public int id { get; set; }
         public string nombre { get; set; }
-        public Vendedor Vendedor  { get; set; }
 
     }
 }

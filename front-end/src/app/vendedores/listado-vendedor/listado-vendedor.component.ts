@@ -28,10 +28,10 @@ export class ListadoVendedorComponent implements OnInit {
   }
 
  
-  /* borrarCiudad(id: number){
-    this.venderoService.eliminarCiudad(id).subscribe(() => {
+  borrarVendedor(id: number){
+    this.venderoService.eliminarVendedor(id).subscribe(() => {
       this.obtenerTodos()
      }, error => console.log(error) )
-  } */
+  }
 
 }

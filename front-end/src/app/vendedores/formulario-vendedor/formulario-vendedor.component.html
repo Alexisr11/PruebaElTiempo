@@ -1,4 +1,4 @@
-<form class="container-formulario" (submit)="guardarCambiosCiudad()" [formGroup]="form">
+<form class="container-formulario" (submit)="guardarCambiosVendedor()" [formGroup]="form">
 
     <div>
         <mat-form-field appearance="outline">
@@ -24,7 +24,7 @@
     <div>
         <mat-form-field appearance="fill">
             <mat-label>Ciudad</mat-label>
-            <mat-select formControlName="ciudad" >
+            <mat-select formControlName="CiudadId" >
                 <mat-option *ngFor="let item of ciudad" [value]="item.id">{{item.nombre}}</mat-option>
             </mat-select>
             <mat-error *ngIf="form.invalid">{{obtenerErrorCampoCiudad()}}</mat-error>

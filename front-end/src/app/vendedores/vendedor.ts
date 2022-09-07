@@ -12,5 +12,5 @@ export interface CreacionVendedorDto{
     nombre: string;
     apellido: string;
     documento: string;
-    ciudadId: number;
+    CiudadId: number;
 }

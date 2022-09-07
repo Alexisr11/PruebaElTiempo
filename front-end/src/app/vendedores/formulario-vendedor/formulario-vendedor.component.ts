@@ -34,7 +34,7 @@ export class FormularioVendedorComponent implements OnInit {
       documento: ['', {
         validators:[ Validators.required]
       }],
-      ciudad: ['', {
+      CiudadId: ['', {
         validators:[ Validators.required]
       }],
     })
@@ -46,7 +46,7 @@ export class FormularioVendedorComponent implements OnInit {
     }
   }
 
-  guardarCambiosCiudad(){
+  guardarCambiosVendedor(){
     this.onSubmit.emit(this.form.value)
   }
 
@@ -80,7 +80,7 @@ export class FormularioVendedorComponent implements OnInit {
   }
 
   obtenerErrorCampoCiudad(){
-    var campo = this.form.get('ciudad');
+    var campo = this.form.get('CiudadId');
     if (campo.hasError('required')){
         return 'El campo Ciudad es Requerido !!';
     }

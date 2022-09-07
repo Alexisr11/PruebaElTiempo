@@ -48,7 +48,7 @@ namespace back_end.Controllers
         [HttpGet("{id:int}")]
         public async Task<ActionResult<CiudadDto>> Get(int id)
         {
-            var ciudad = await Context.Vendedor.FirstOrDefaultAsync(x => x.id == id);
+            var ciudad = await Context.Ciudad.FirstOrDefaultAsync(x => x.id == id);
 
             if (ciudad == null)
             {
@@ -61,7 +61,7 @@ namespace back_end.Controllers
         [HttpPut("{id:int}")]
         public async Task<ActionResult<CiudadDto>> Put(int id, CreacionCiudadDto creacionCiudadDto)
         {
-            var ciudad = await Context.Vendedor.FirstOrDefaultAsync(x => x.id == id);
+            var ciudad = await Context.Ciudad.FirstOrDefaultAsync(x => x.id == id);
 
             if (ciudad == null)
                 return NotFound();
@@ -75,7 +75,7 @@ namespace back_end.Controllers
         [HttpDelete("{id:int}")]
         public async Task<ActionResult<CiudadDto>> Delete(int id)
         {
-            var ciudad = await Context.Vendedor.AnyAsync(x => x.id == id);
+            var ciudad = await Context.Ciudad.AnyAsync(x => x.id == id);
 
             if (ciudad == null)
                 return NotFound();

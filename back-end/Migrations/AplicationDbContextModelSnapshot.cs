@@ -54,17 +54,16 @@ namespace back_end.Migrations
 
                     b.HasKey("id");
 
-                    b.HasIndex("CiudadId")
-                        .IsUnique();
+                    b.HasIndex("CiudadId");
 
                     b.ToTable("Vendedor");
                 });
 
             modelBuilder.Entity("back_end.Entidades.Vendedor", b =>
                 {
-                    b.HasOne("back_end.Entidades.Ciudad", null)
-                        .WithOne("Vendedor")
-                        .HasForeignKey("back_end.Entidades.Vendedor", "CiudadId")
+                    b.HasOne("back_end.Entidades.Ciudad", "Ciudad")
+                        .WithMany()
+                        .HasForeignKey("CiudadId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

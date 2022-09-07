@@ -22,16 +22,16 @@ export class VendedorService {
     return this.http.post(this.apiUrl, vendedor);
   }
 
-  /*public buscarCiudadPorId(id: number): Observable<CiudadDto> {
-    return this.http.get<CiudadDto>(`${this.apiUrl}/${id}`)
+  public buscarVendedorPorId(id: number): Observable<VendedorDto> {
+    return this.http.get<VendedorDto>(`${this.apiUrl}/${id}`)
   }
 
-  public editarCiudad(id: number, creacionCiudadDto: CrearCiudadDto){
-    console.log(creacionCiudadDto);
-    return this.http.put<CiudadDto>(`${this.apiUrl}/${id}`, creacionCiudadDto);
+  public editarVendedor(id: number, creacionVendedorDto: CreacionVendedorDto){
+    console.log(creacionVendedorDto);
+    return this.http.put<CreacionVendedorDto>(`${this.apiUrl}/${id}`, creacionVendedorDto);
   }
 
-  public eliminarCiudad(id: number){
+  public eliminarVendedor(id: number){
     return this.http.delete(`${this.apiUrl}/${id}`);
-  } */
+  }
 }

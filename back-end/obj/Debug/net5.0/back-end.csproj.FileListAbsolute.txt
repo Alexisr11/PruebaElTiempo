@@ -57,3 +57,4 @@ C:\Repositorios\PruebaElTiempo\back-end\bin\Debug\net5.0\Microsoft.Extensions.De
 C:\Repositorios\PruebaElTiempo\back-end\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
 C:\Repositorios\PruebaElTiempo\back-end\bin\Debug\net5.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Repositorios\PruebaElTiempo\back-end\bin\Debug\net5.0\Microsoft.Bcl.HashCode.dll
+C:\Repositorios\PruebaElTiempo\back-end\obj\Debug\net5.0\back-end.csproj.AssemblyReference.cache

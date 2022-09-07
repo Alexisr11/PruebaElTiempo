@@ -10,6 +10,6 @@ namespace back_end.DTOs
         public string nombre { get; set; }
         public string apellido { get; set; }
         public string documento { get; set; }
-        public int ciudad { get; set; }
+        public int CiudadId { get; set; }
     }
 }

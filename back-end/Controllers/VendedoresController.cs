@@ -46,5 +46,46 @@ namespace back_end.Controllers
             await Context.SaveChangesAsync();
             return NoContent();
         }
+
+        [HttpGet("{id:int}")]
+        public async Task<ActionResult<VendedorDto>> Get(int id)
+        {
+            var vendedor = await Context.Vendedor.Include(c => c.Ciudad)
+                .FirstOrDefaultAsync(x => x.id == id);
+
+            if (vendedor == null)
+            {
+                return NotFound();
+            }
+
+            return mapper.Map<VendedorDto>(vendedor);
+        }
+
+        [HttpPut("{id:int}")]
+        public async Task<ActionResult<VendedorDto>> Put(int id, CreacionVendedorDto creacionVendedorDto)
+        {
+            var vendedor = await Context.Vendedor.FirstOrDefaultAsync(x => x.id == id);
+
+            if (vendedor == null)
+                return NotFound();
+
+            vendedor = mapper.Map(creacionVendedorDto, vendedor);
+            await Context.SaveChangesAsync();
+            return NoContent();
+        }
+
+
+        [HttpDelete("{id:int}")]
+        public async Task<ActionResult<CiudadDto>> Delete(int id)
+        {
+            var vendedor = await Context.Vendedor.AnyAsync(x => x.id == id);
+
+            if (vendedor == null)
+                return NotFound();
+
+            Context.Remove(new Vendedor() { id = id });
+            await Context.SaveChangesAsync();
+            return NoContent();
+        }
     }
 }

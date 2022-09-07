@@ -13,7 +13,7 @@ export class CrearVendedorComponent {
   constructor(private router: Router, private vendedorServicio: VendedorService) { }
 
 
-  guardarCambiosCiudad(crearVendedor: CreacionVendedorDto){
+  guardarCambiosVendedor(crearVendedor: CreacionVendedorDto){
     console.log(crearVendedor);
     this.vendedorServicio.crearVendedor(crearVendedor)
     .subscribe(() =>  {

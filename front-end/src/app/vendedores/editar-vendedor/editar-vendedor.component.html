@@ -1,1 +1,8 @@
-<p>editar-vendedor works!</p>
+<h2>Editar Vendedor</h2>
+
+<app-formulario-vendedor *ngIf="modelo"
+[modelo]="modelo"
+(onSubmit)="guardarCambios($event)"
+></app-formulario-vendedor>
+
+<mat-spinner *ngIf="!modelo"></mat-spinner>
