@@ -10,6 +10,6 @@ namespace back_end.DTOs
     {
         [Required(ErrorMessage = "El campo {0} es obligatorio")]
         [StringLength(maximumLength: 50)]
-        public string NOMBRE { get; set; }
+        public string nombre { get; set; }
     }
 }

@@ -11,9 +11,9 @@ namespace back_end
     {
         public AplicationDbContext(DbContextOptions options) : base(options)
         {
-
         }
 
         public DbSet<Ciudad> Ciudad { get; set; }
+        public DbSet<Vendedor> Vendedor { get; set; }
     }
 }

@@ -7,8 +7,9 @@ namespace back_end.Entidades
 {
     public class Ciudad
     {
-        public int ID { get; set; }
-        public string NOMBRE { get; set; }
+        public int id { get; set; }
+        public string nombre { get; set; }
+        public Vendedor Vendedor  { get; set; }
 
     }
 }
